@@ -3,7 +3,7 @@
 This application is used as demo. This project was developed with Angular CLI version 1.4.2. using WebRTC.
 The subject of the demo is what if in the kitchen something goes wrong or there aren't ideas for what to cook.
 
-![chef](https://mir-s3-cdn-cf.behance.net/project_modules/disp/7306187553557.560ad6bc13952.png =100x)
+![chef](https://mir-s3-cdn-cf.behance.net/project_modules/disp/7306187553557.560ad6bc13952.png) {:.some-css-class width="200"}
 
 ## Development server
 
