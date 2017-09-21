@@ -1,0 +1,50 @@
+.app-component{
+    background-size: cover;
+    background-image: url("https://healthyforgood.heart.org/-/media/aha/h4gm/article-images/how-to-eat-more-fruits-and-veg.jpg");
+    text-align:center;
+    background-repeat: no-repeat;
+}
+.title {
+    padding-top: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+    color: cornflowerblue;
+}
+.content {
+    background-color: white;
+    width: 900px;
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 600px;
+}
+
+label, input {
+    display: block;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align:middle;
+    width: 230px;
+    height: 20px;
+}
+
+label { 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+    width: 350px;
+    margin-right: 10px;
+    font-style: bold;
+}
+button{
+    width: 100px;
+    padding: 5px;
+    margin-top: 20px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
