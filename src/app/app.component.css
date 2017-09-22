@@ -10,15 +10,13 @@
     font-size: 70px;
     color: cornflowerblue;
     margin-bottom: 35px;
-    margin-top: 25px;
+    margin-top: -35px;
     position: relative;
     z-index: 1;
     
 }
 
 .content {
-    background-color: white;
-    width: 700px;
     margin-left: 300px;
     margin-right: 300px;
     height: 640px;
@@ -53,14 +51,11 @@ button:hover{
     background-color:cornflowerblue;
     font-weight: bold;
 }
-.gif{
-    margin-top: 50px;
-    width: 100px;
-    height: 80px;
-}
 
 .logo{
-    width: 200px;
-    height: 200px;
+    width: 380px;
     margin-top: 15px;
+}
+form{
+    background-color: white;
 }

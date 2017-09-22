@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Live chef';
-  username = "Username";
-  password = "Password";
-  login = "Login";
-  signup = "Sign up";
+  username = 'Username';
+  password = 'Password';
+  login = 'Login';
+  signup = 'Sign up';
 }
