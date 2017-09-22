@@ -9,14 +9,19 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 70px;
     color: cornflowerblue;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
+    
 }
+
 .content {
     background-color: white;
-    width: 900px;
-    margin-left: 200px;
-    margin-right: 200px;
-    height: 600px;
+    width: 700px;
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 640px;
 }
 
 label, input {
@@ -32,19 +37,26 @@ input {
 
 label { 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
-    
+    float: left;   
     text-align: right;
-    width: 350px;
+    width: 250px;
     margin-right: 10px;
-    font-style: bold;
 }
 button{
     width: 100px;
     padding: 5px;
     margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .gif{
-    margin-top: 30px;
+    margin-top: 50px;
+    width: 100px;
+    height: 80px;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
 }
