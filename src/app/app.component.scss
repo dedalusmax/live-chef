@@ -1,6 +1,8 @@
 .app-component {
     background-image: url("./~/assets/backgroundImage.jpg");
     text-align:center;
+    background-size: cover;
+    background-position: 50% 50%;
 
     .title {
         padding-top: 5px;
@@ -9,7 +11,8 @@
         color: red;
         margin-top: -35px;
         position: relative;
-        z-index: 1;       
+        z-index: 1;   
+        font-weight: bold;    
     }
     
     button{
@@ -18,17 +21,17 @@
         margin-top: 20px;
         font-size: 15px;
     }
-    
+
     .logo{
         width: 380px; 
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20px;
     }
+
     form{
         background-color: white;
-        margin-bottom: 110px;
+        margin-bottom: 25px;
         margin-top: -30px;
     }
     h3.subtitle{
