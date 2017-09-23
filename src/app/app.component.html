@@ -1,19 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app-component">
-    <img class="logo" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/7306187553557.560ad6bc13952.png">
-   
-    <form>
+    <img class="logo" src="./assets/chef.png">
+
+    <form class="form-horizontal">
         <h1 class="title">
             <span>{{title}}</span>
-          </h1>
-          let's cook
-          <br>
-      <label for="username">{{username}}</label>
-      <input name="username" id="username" />
-      <label for="password">{{password}}</label>
-      <input name="password" id="password" />
-      <button>{{login}}</button>
-      <button>{{signup}}</button>
-      guest
+        </h1>
+        <span>{{subtitle}}</span>
+        <br>
+        <div class="form-group">
+            <label for="username" class="col-2 control-label">{{username}}</label>
+            <div class="col-10">
+                <input name="username" id="username" placeholder="Username" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-2 control-label">{{password}}</label>
+            <div class="col-10">
+                <input name="password" id="password" placeholder="Password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-10">
+                <button type="submit" class="btn btn-default">{{login}}</button>
+                <button type="submit" class="btn btn-default">{{signup}}</button>
+                <button type="submit" class="btn btn-default btn-lg">{{guest}}</button>
+            </div>
+        </div>
     </form>
 </div>

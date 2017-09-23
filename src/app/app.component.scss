@@ -1,0 +1,103 @@
+.app-component {
+    background-size: cover;
+    background-image: url("./~/assets/backgroundImage.jpg");
+    text-align:center;
+    background-repeat: no-repeat;
+
+    .title {
+        padding-top: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 70px;
+        color: red;
+        margin-top: -35px;
+        position: relative;
+        z-index: 1;       
+    }
+    
+    button{
+        min-width: 100px;
+        padding: 5px;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    button:hover{
+        background-color:cornflowerblue;
+        font-weight: bold;
+    }
+    
+    .logo{
+        width: 380px; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    form{
+        background-color: white;
+        display: block;
+    }
+}
+// Extra small devices - Portrait phones 
+$screen-xxs-max: 544px;
+// small  - Landscape phones
+$screen-xs-min: 544px;
+$screen-xs-max: 768px; 
+// Medium devices - Tablets 
+$screen-sm-min: 768px;
+$screen-sm-max: 992px;
+//Large devices - Desktops
+$screen-md-min: 992px;
+$screen-md-max: 1200px;
+// Extra large devices - Desktops 
+$screen-lg-min: 1200px;
+
+/* Midium devices (tablets, 768px and up) */
+@media (max-width: $screen-sm-max) { 
+
+    .app-component{
+        background-image: none;
+
+        .logo{
+           width: 200px;       
+        }
+
+        .title {
+            font-size: 50px;
+        }
+        form{
+            margin: 0px;
+        }
+
+        button{
+            width: 80%;
+        }
+    }
+ }
+/* Midium devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min){
+    .col-sm-offset-2 {
+        margin-left: 0px;
+   }
+}
+/* small  - Landscape phones */
+@media (max-width: $screen-xs-max) { 
+    form{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    button{
+        width: 100%;
+    }
+ }
+//Large devices - Desktops
+@media (min-width: $screen-md-min) { 
+    form{
+
+        margin-left: 300px;
+        margin-right: 300px;   
+    }
+ }
+
+ // Extra large
+ @media (min-width: $screen-lg-min) { 
+ }
