@@ -1,8 +1,6 @@
 .app-component {
-    background-size: cover;
     background-image: url("./~/assets/backgroundImage.jpg");
     text-align:center;
-    background-repeat: no-repeat;
 
     .title {
         padding-top: 5px;
@@ -20,10 +18,6 @@
         margin-top: 20px;
         font-size: 15px;
     }
-    button:hover{
-        background-color:cornflowerblue;
-        font-weight: bold;
-    }
     
     .logo{
         width: 380px; 
@@ -34,7 +28,11 @@
     }
     form{
         background-color: white;
-        display: block;
+        margin-bottom: 110px;
+        margin-top: -30px;
+    }
+    h3.subtitle{
+        font-size: 20px;
     }
 }
 // Extra small devices - Portrait phones 
@@ -57,10 +55,6 @@ $screen-lg-min: 1200px;
     .app-component{
         background-image: none;
 
-        .logo{
-           width: 200px;       
-        }
-
         .title {
             font-size: 50px;
         }
@@ -69,7 +63,7 @@ $screen-lg-min: 1200px;
         }
 
         button{
-            width: 80%;
+            width: 60%;
         }
     }
  }
@@ -90,14 +84,20 @@ $screen-lg-min: 1200px;
     }
  }
 //Large devices - Desktops
-@media (min-width: $screen-md-min) { 
+@media (min-width: $screen-md-min) and (min-width: $screen-sm-max){ 
     form{
 
-        margin-left: 300px;
-        margin-right: 300px;   
+        width: 40%;
+        display: inline-block;
+
     }
  }
 
  // Extra large
  @media (min-width: $screen-lg-min) { 
+
+    form{       
+     width: 40%;
+     display: inline-block;        
+    }
  }

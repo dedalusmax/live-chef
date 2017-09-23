@@ -1,25 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="app-component">
-    <img class="logo" src="./assets/chef.png">
-
-    <form class="form-horizontal">
+<div class="app-component img-responsive">
+    <img class="logo img-responsive" src="./assets/chef.png">
+    <form class="form-horizontal" role="form">
         <h1 class="title">
             <span>{{title}}</span>
         </h1>
-        <span>{{subtitle}}</span>
+        <h3 class="subtitle">{{subtitle}}</h3>
         <br>
+
         <div class="form-group">
-            <label for="username" class="col-2 control-label">{{username}}</label>
-            <div class="col-10">
-                <input name="username" id="username" placeholder="Username" />
-            </div>
+                <div class="col-xs-6 col-xs-offset-3">
+                  <div class="input-group">
+                      <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user"></span></span>
+                      <input class="form-control left-border-none" placeholder="{{username}}" type="text" name="username">
+                  </div>
+                </div>
         </div>
+
         <div class="form-group">
-            <label for="password" class="col-2 control-label">{{password}}</label>
-            <div class="col-10">
-                <input name="password" id="password" placeholder="Password" />
-            </div>
+                <div class="col-xs-6 col-xs-offset-3">
+                  <div class="input-group">
+                      <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock"></span></span>
+                      <input class="form-control left-border-none" placeholder="{{password}}" type="text" name="password">
+                  </div>
+                </div>
         </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-10">
                 <button type="submit" class="btn btn-default">{{login}}</button>
