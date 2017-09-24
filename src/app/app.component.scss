@@ -1,6 +1,6 @@
 .app-component {
     background-image: url("./~/assets/backgroundImage.jpg");
-    text-align:center;
+    text-align: center;
     background-size: cover;
     background-position: 50% 50%;
     top: 0;
@@ -98,6 +98,14 @@ $screen-lg-min: 1200px;
     .col-sm-offset-2 {
         margin-left: 0px;
    }
+   .center {
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 }
 /* small  - Landscape phones */
 @media (max-width: $screen-xs-max) { 
