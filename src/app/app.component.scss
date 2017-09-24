@@ -3,6 +3,9 @@
     text-align:center;
     background-size: cover;
     background-position: 50% 50%;
+    top: 0;
+    bottom: 0;
+    position: fixed;
 
     .title {
         padding-top: 5px;
@@ -18,7 +21,7 @@
     button{
         min-width: 100px;
         padding: 5px;
-        margin-top: 20px;
+        margin-top: 5px;
         font-size: 15px;
     }
 
@@ -28,15 +31,29 @@
         margin-left: auto;
         margin-right: auto;
     }
+    img.logo
+        {animation-timing-function: linear;}
+    
 
-    form{
+    form {
         background-color: white;
-        margin-bottom: 25px;
         margin-top: -30px;
     }
     h3.subtitle{
         font-size: 20px;
     }
+
+    // animation
+    #logo {
+        animation-duration: 3s;
+        animation-delay: 1s;
+      }
+    
+    #form {
+        animation-duration: 5s;
+        animation-delay: 1s;
+      }
+
 }
 // Extra small devices - Portrait phones 
 $screen-xxs-max: 544px;
@@ -87,10 +104,10 @@ $screen-lg-min: 1200px;
     }
  }
 //Large devices - Desktops
-@media (min-width: $screen-md-min) and (min-width: $screen-sm-max){ 
+@media (min-width: $screen-md-min){ 
     form{
 
-        width: 40%;
+        width: 30%;
         display: inline-block;
 
     }
@@ -99,8 +116,4 @@ $screen-lg-min: 1200px;
  // Extra large
  @media (min-width: $screen-lg-min) { 
 
-    form{       
-     width: 40%;
-     display: inline-block;        
-    }
  }
