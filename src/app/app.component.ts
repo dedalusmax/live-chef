@@ -11,6 +11,6 @@ export class AppComponent {
   password = 'Password';
   login = 'Login';
   signup = 'Sign up';
-  subtitle = "Cooking makes simple";
-  guest = "Let's just take a look"
+  subtitle = 'Cooking makes simple';
+  guest = 'Take a look';
 }
