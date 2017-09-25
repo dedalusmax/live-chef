@@ -1,6 +1,9 @@
 # LiveChef
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+<img src="./src/assets/chef.png" width="100" height="100">
+
+This application is used as demo. This project was developed with Angular CLI version 1.4.2. using WebRTC.
+The subject of the demo is what if in the kitchen something goes wrong or there aren't ideas for what to cook.
 
 ## Development server
 
