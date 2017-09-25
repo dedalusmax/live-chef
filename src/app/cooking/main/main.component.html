@@ -1,3 +1,19 @@
-<p>
-  main works!
-</p>
+<div class="main-component">
+
+  <div class="header">
+    <img class="logo img-responsive" src="./assets/chef.png" id="logo">
+    <p>
+      Cooking
+    </p>
+  </div>
+
+  <div class="list-group" id="list-tab" *ngFor="let item of items">
+    <a class="list-group-item list-group-item-action" id="{{item.Id}}" href="#list-{{item.Id}}" aria-controls="home">       
+                <img class="userImage img-responsive" src="./assets/small-logo.png" id="logo">                
+                <h3>{{item.DishName}}  <small [ngClass]="{'red': item.Status == 'NeedHelp', 'green': item.Status == 'Started'}"> {{item.Status}}</small></h3>
+         </a>
+  </div>
+
+  <div class="footer">
+  </div>
+</div>

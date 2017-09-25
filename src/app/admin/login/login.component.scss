@@ -1,4 +1,4 @@
-.app-component {
+.login-component {
     background-image: url("./~/assets/backgroundImage.jpg");
     text-align: center;
     background-size: cover;
@@ -51,17 +51,21 @@
         margin-top: 10px;    
     }
 
+    .alert{
+        display: inline-block;
+        margin-top: 10px;
+    }
+
     // animation
     #logo {
         animation-duration: 2s;
         animation-delay: 1s;
-      }
+    }
     
     #form {
         animation-duration: 5s;
         animation-delay: 1s;
-      }
-
+      }    
 }
 // Extra small devices - Portrait phones 
 $screen-xxs-max: 544px;
@@ -80,7 +84,7 @@ $screen-lg-min: 1200px;
 /* Midium devices (tablets, 768px and up) */
 @media (max-width: $screen-sm-max) { 
 
-    .app-component{
+    .login-component{
         .title {
             font-size: 50px;
         }
@@ -109,7 +113,7 @@ $screen-lg-min: 1200px;
 }
 /* small  - Landscape phones */
 @media (max-width: $screen-xs-max) { 
-    .app-component{
+    .login-component{
         background-image: none;
         form{
             margin-left: 40px;

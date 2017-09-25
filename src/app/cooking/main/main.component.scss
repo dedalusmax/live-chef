@@ -1,0 +1,38 @@
+.main-component{
+    .header{
+      background-color: darkslategray;
+      color: white;
+      font-size: 50px;
+
+        .logo{
+            width: 60px; 
+            float: left;
+            margin: 5px 15px;
+        }
+    }
+
+    .userImage{
+        width: 80px; 
+        float: left;
+        padding: 0px 10px;
+    }
+
+    .red{
+        color: red;
+    }
+    .green{
+        color: green;
+    }
+    .list-group-item{
+        padding: 15px 5px;
+    }
+    .footer{
+        margin: 0;
+        background-color: darkslategray;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 2rem;
+    }
+}
