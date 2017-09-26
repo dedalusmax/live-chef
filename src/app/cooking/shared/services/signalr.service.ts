@@ -2,31 +2,37 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Cooking } from '../models/cooking';
 
-let $: any;
+import 'signalr';
 
 @Injectable()
 export class SignalrService {
+  // signalR connection reference
+  private connection: SignalR;
 
-  private hub = $.connection.chefHub;
+  // signalR proxy reference
+  private proxy: SignalR.Hub.Proxy;
 
-  updateCookings: Observable<Array<Cooking>>;
-  
+
   constructor() {
+    // initialize connection
+    this.connection = $.connection;
 
-    this.hub.client.cookingAdded = function (cooking) {
-      console.log('New cooking added: ' + cooking.DishName);
-    };
+    // to create proxy give your hub class name as parameter. IMPORTANT: notice that I followed camel casing in giving class name
+    this.proxy = $.connection.hub.createHubProxy('chatHub');
 
-    this.hub.client.userLoggedIn = function (user) {
-      console.log('User logged-in: ' + user.Username);
-    };
+    // define a callback method for proxy
+    this.proxy.on('messageReceived', (latestMsg) => this.onMessageReceived(latestMsg));
 
-    $.connection.hub.start().done(function () {
-    });
+    this.connection.hub.start();
   }
 
-  addCooking(data) {
-    this.hub.server.addCooking(data);
+  private onMessageReceived(latestMsg: string) {
+    console.log('New message received: ' + latestMsg);
   }
 
+  // method for sending message
+  broadcastMessage(msg: string) {
+    // invoke method by its name using proxy
+    this.proxy.invoke('sendMessage', msg);
+  }
 }

@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
 
   constructor(
     private signalr: SignalrService
-  ) { 
+  ) {
 
   }
 
@@ -28,9 +28,9 @@ export class MainComponent implements OnInit {
     // this.items.push({ DishName: 'Bolognese', Id: 3, Status: 'Ongoing', Username: 'Josip' });
     // this.items.push({ DishName: 'Baked potatoes', Id: 4, Status: 'NeedHelp', Username: 'Barica' });
 
-    this.signalr.updateCookings.subscribe((cookings: Array<Cooking>) => {
-      this.items = cookings;
-    });
+    // this.signalr.updateCookings.subscribe((cookings: Array<Cooking>) => {
+    //   this.items = cookings;
+    // });
   }
 
   getData() {
