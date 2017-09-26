@@ -34,7 +34,7 @@ import { AdminModule } from './admin/admin.module';
     WebApiService,
     CookieService,
     XHRBackend
-  ],
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

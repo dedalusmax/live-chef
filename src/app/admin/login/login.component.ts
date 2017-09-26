@@ -15,16 +15,28 @@ export class LoginComponent implements OnInit {
 
   model: User;
   loginFailed: boolean;
+  videoUrl: any;
 
   constructor(
     private router: Router,
     private userService: UserService,
-    private cookieService: CookieService,
-  ) { }
+    private cookieService: CookieService
+    ) { }
 
   ngOnInit() {
     this.model = new User();
-  }
+
+    navigator.getUserMedia({ audio: false, video: true },
+      (stream: MediaStream) => {
+        if (window.URL) {
+          this.videoUrl = window.URL.createObjectURL(stream);
+        } else {
+          this.videoUrl = stream;
+        }
+      }, (error: MediaStreamError) => {
+
+      });
+    }
 
   public onSubmit() {
     this.login();
