@@ -43,5 +43,9 @@ ng g module admin --routing -m app
 ng g component admin/login
 ```
 
+- open app-routing.module.ts and add the route: { path: '', redirectTo: '/login', pathMatch: 'full' }
+- open admin.module.ts and copy the import for LoginComponent  
+- open admin-routing.module.ts, paste the import, and add the route: { path: 'login', component: LoginComponent }
+- show the app
 
 
