@@ -48,4 +48,20 @@ ng g component admin/login
 - open admin-routing.module.ts, paste the import, and add the route: { path: 'login', component: LoginComponent }
 - show the app
 
+```bash
+ng g class admin/shared/models/user
+ng g service shared/services/web-api -m app
+```
+- copy the code from this project into the file!
+- add references into app.module.ts
 
+```bash
+ng g service admin/shared/services/user -m admin
+```
+- open user.service.ts
+- add imports for User and WebApiService
+- add: private apiPath = 'http://localhost/LiveChefService/';
+- add DI in constructor: private service: WebApiService
+- add login method: loging(user: User) 
+- add body inside: return this.service.save<User>(this.apiPath + '/login', user);
+  
