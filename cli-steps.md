@@ -4,10 +4,12 @@ This session is aiming to demonstrate the ease of development of Angular 4 appli
 
 # Step 1: getting the project ready
 
+```bash
 cd (root)
 ng new test
 cd test
 npm install
 ng serve
+```
 
 
