@@ -32,6 +32,19 @@ NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network
 - also, change -webkit-fill- to -webkit-stretch
 - open index.html and change the icon path to: assets/small-logo.png
 - show the app
+- add dependencies for bootstrap inside the package.json:
+```bash
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "3.2.1"
+```
+- and add the links into the angular-cli.json:
+```bash
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "../node_modules/font-awesome/css/font-awesome.css",
+```
+- execute ng serve
+- show the app
 
 ## Step 3: preparing the app structure and adding admin module
 
@@ -65,3 +78,15 @@ ng g service admin/shared/services/user -m admin
 - add login method: loging(user: User) 
 - add body inside: return this.service.save<User>(this.apiPath + '/login', user);
   
+## Step 4: adding template and styles for a component
+
+- browse to the KO project and find app/templates/login.html
+- copy all the HTML into the login.component.html
+- change the link of the chef.png to: ./assets/chef.png
+- show the app
+- change the bindings, from: data-bind="value: username" into [(ngModel)]="model.username"
+- also for password field
+- change button bindings, from: data-bind="click: loginUser" into (click)="loginUser()"
+- also for guest field
+- change visible binding to: *ngIf="error"
+- change span into {{error}}
