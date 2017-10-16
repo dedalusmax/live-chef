@@ -8,7 +8,7 @@ This session is aiming to demonstrate the ease of development of Angular 4 appli
 npm install -g @angular/cli
 
 cd (root)
-ng new new live-chef1 --minimal --routing -si -sg -is false -it false --style scss -v
+ng new live-chef1 --minimal --routing --style scss --skip-git --skip-install -v
 ```
 
 options: 
@@ -16,13 +16,26 @@ https://github.com/angular/angular-cli/wiki/new
 
 - open Visual Studio Code
 - browse to the project folder
-- open integrated terminal
+- open integrated terminal:
 
 ```bash
 npm install
 ng serve
 ```
+NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network.
 
 ## Step 2: copying styles and assets from the source project
 
-- 
+- open file explorer, go to the source folder and copy all from Content/images into app/assets folder
+- copy styles.scss from Content into app folder
+- open styles.scss and change the path to the image to: ./~/assets//backgroundImage.jpg
+- also, change -webkit-fill- to -webkit-stretch
+- show the app
+
+## Step 3: preparing the app structure
+
+- open angular-cli.json and change: defaults/component/inlineStyle to true, and inlineTemplate to true
+- open app.component.ts and remove all the lines in inline template except for router-outlet
+
+
+
