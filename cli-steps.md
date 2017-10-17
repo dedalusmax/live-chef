@@ -65,6 +65,7 @@ ng g component admin/login
 ng g class admin/shared/models/user
 ng g service shared/services/web-api -m app
 ```
+- add username and password fields into User class
 - copy the code from this project into the file!
 - add references into app.module.ts
 
@@ -78,10 +79,13 @@ ng g service admin/shared/services/user -m admin
 - add login method: loging(user: User) 
 - add body inside: return this.service.save<User>(this.apiPath + '/login', user);
   
-## Step 4: adding template and styles for a component
+## Step 4: adding template and styles for a login component to work
 
 - browse to the KO project and find app/templates/login.html
 - copy all the HTML into the login.component.html
+
+changes in the login.component.html:
+
 - change the link of the chef.png to: ./assets/chef.png
 - show the app
 - change the bindings, from: data-bind="value: username" into [(ngModel)]="model.username"
@@ -90,3 +94,14 @@ ng g service admin/shared/services/user -m admin
 - also for guest field
 - change visible binding to: *ngIf="error"
 - change span into {{error}}
+
+changes in the login.component.ts:
+
+- import { FormsModule } from '@angular/forms';
+- import UserService from the services
+
+changes in the app.module.ts:
+
+- add: import { HttpModule, XHRBackend } from '@angular/http';
+- add imports: HttpModule
+- add provider: XHRBackend
