@@ -99,9 +99,69 @@ changes in the login.component.ts:
 
 - import { FormsModule } from '@angular/forms';
 - import UserService from the services
+- add loginUser method
+- add onSubmit method to call loginUser method
 
 changes in the app.module.ts:
 
 - add: import { HttpModule, XHRBackend } from '@angular/http';
 - add imports: HttpModule
 - add provider: XHRBackend
+
+## Step 5: add router and navigation to a new cooking module
+
+changes in login.component.ts:
+
+- import { Router } from '@angular/router';
+- add DI for router
+- in loginUser method: this.router.navigate(['/cooking/main']);
+
+in terminal:
+ 
+ ```bash
+ng g module cooking --routing -m app
+ng g component cooking/main
+```
+
+cooking-routing.module.ts:
+
+- add routing for cooking module: { path: 'cooking/main', component: MainComponent }
+- show app, click on login
+- explain children in navigation 
+
+- copy HTML from the source project: templates/main.html into main.component.html
+- explain navigation strategy 
+
+in app-routing.module.ts:
+- RouterModule.forRoot(routes, { useHash: true })
+
+create new model, service and component for live cooking and recipes:
+
+ ```bash
+ng g class cooking/shared/models/cooking
+ng g class cooking/shared/models/recipe
+ng g service cooking/shared/services/cooking -m cooking
+ng g service cooking/shared/services/recipe -m cooking
+ng g component cooking/live-cooking -m cooking
+ng g component cooking/recipes -m cooking
+```
+
+in cooking-routing.module.ts:
+- copy imports from cooking.module.ts for two newly added components
+- add two child routes into children array: 
+{ path: 'live-cooking', component: LiveCookingComponent },
+  { path: 'recipes', component: RecipesComponent }
+
+in main.component.html:
+
+- remove templates on the bottom, and insert: <router-outlet> tag
+- remove data-bind on the top
+- add router links instead of data-bind: routerLink="/cooking/live-cooking" routerLinkActive="active"
+- also the second one, others remove
+
+copy the html to show some data:
+
+- from the cookings-list.html into live-cooking.component.html
+- from the recipes-list.html into recipes.component.html
+- from the cooking-card.html into live-cooking.component.html (instead of template)
+- from the recipe-card.html into recipes.component.html (instead of template)
