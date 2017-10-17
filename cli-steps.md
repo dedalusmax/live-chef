@@ -188,3 +188,13 @@ in live-cooking.component.ts:
 - add code into the ngOnInit method: this.service.getCookings().subscribe(result => this.cookings = result );
 - explain about generics and type enforcement: Array<Cooking>
   
+in live-cooking.component.html:
+
+- replace data-bind with: *ngFor="let cooking of cookings"
+- replace textual bindings with interpolation: {{recipe.Name}}
+- replace image bindings to [attr.scr]="recipe.Image" or "cooking.Dish.Image"
+
+the same thing in recipes.component.html!
+
+in the source project, in RecipeRepository.cs replace "Content/images" to "assets" 
+- rebuild the project
