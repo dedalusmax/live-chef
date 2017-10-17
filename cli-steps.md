@@ -165,3 +165,26 @@ copy the html to show some data:
 - from the recipes-list.html into recipes.component.html
 - from the cooking-card.html into live-cooking.component.html (instead of template)
 - from the recipe-card.html into recipes.component.html (instead of template)
+
+### add some data inside:
+
+in cooking.service.ts:
+
+- copy the code from user.service.ts
+- change apiPath to 'cooking'
+- create getCookings method as getList
+
+do the same with recipe.service.ts:
+
+- copy the code from cooking.service.ts
+- change the apiPath to 'recipe'
+- rename method to 'getRecipe'
+
+in live-cooking.component.ts: 
+
+- add CookingService reference
+- add Cooking reference
+- add field: cookings = []
+- add code into the ngOnInit method: this.service.getCookings().subscribe(result => this.cookings = result );
+- explain about generics and type enforcement: Array<Cooking>
+  
