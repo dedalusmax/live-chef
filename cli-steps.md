@@ -42,22 +42,12 @@ Explain what the intentions are, show the live chef and what we want to do.
 - open file explorer, go to the source folder and copy all from **Content/images** into **app/assets** folder
 - open **styles.scss** from **Content** and copy all into *styles.scss* inside the **app** folder
 - explain it is not a good idea and why
-- make changes in the **styles.scss**:
---- find the path to the image and change it to: *./~/assets/backgroundImage.jpg*
---- change -webkit-fill- to -webkit-stretch
-- make changes in the **index.html**: change the icon path to: *assets/small-logo.png*
-
-Additionally:
-- stop the LiveChefService project
-- change the paths inside *Service/Repositories/RecipeRepository.cs* from **Content/images** to **assets** 
-- rebuild the project
-
+- make changes in the **styles.scss**: find the path to the image and remove one dot
 - show the app
-- explain why it doesn't show anything usefull
+- explain why it doesn't show yet anything usefull
 
-### changes in the package.json:
+### add dependencies for bootstrap in the package.json:
 
-- add dependencies for bootstrap:
 ```json
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
