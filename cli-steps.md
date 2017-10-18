@@ -53,8 +53,13 @@ Explain what the intentions are, show the live chef and what we want to do.
     "font-awesome": "^4.7.0",
     "jquery": "3.2.1"
 ```
+- quit the terminal job
 
-### add the links into the angular-cli.json:
+```bash
+    npm install
+```
+
+### add the links to the styles into the angular-cli.json:
 
 ```style
     "../node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -62,8 +67,7 @@ Explain what the intentions are, show the live chef and what we want to do.
 ```
 in terminal:
 
-```style
-    (quit task)
+```bash
     ng serve
 ```
 - show the app
