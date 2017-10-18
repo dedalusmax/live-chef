@@ -6,26 +6,28 @@ This session is aiming to demonstrate the ease of development of Angular 4 appli
 
 - open Visual Studio Code
 - open integrated terminal
-- only explain that CLI needs to be installed, other lines execute:
+- only **explain** that CLI needs to be installed, other lines execute:
 
 ```bash
 npm install -g @angular/cli
 d:
 ng new live-chef --minimal --routing --style scss --skip-git --skip-install -v
 cd live-chef
+npm install
 ```
-
-NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (for new project) on a home wifi network.
--> switch to the presentation slides!
-
 options: 
 https://github.com/angular/angular-cli/wiki/new
 
+NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (for new project) on a home wifi network.
+
+> switch to the presentation slides (with a keen eye to the installation process!)
+
 ```bash
-npm install
 ng serve
 ```
 NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network.
+
+> switch to the presentation slides!
 
 ## Step 2: copying styles and assets from the source project
 
