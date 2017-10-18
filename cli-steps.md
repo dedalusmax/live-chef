@@ -168,33 +168,48 @@ export class WebApiService extends Http {
 
 ## Step 4: adding template and styles for a login component to work
 
-- browse to the KO project and find app/templates/login.html
-- copy all the HTML into the login.component.html
+- browse to the KO project and find *app/templates/login.html*
+- copy all the HTML into the **login.component.html**
 
 ### changes in the login.component.html:
 
-- change the link of the chef.png to: ./assets/chef.png
-- show the app
-- change the bindings, from: data-bind="value: username" into [(ngModel)]="model.username"
+- change the bindings, from: `data-bind="value: username"` into `[(ngModel)]="model.username"`
 - also for password field
-- change button bindings, from: data-bind="click: loginUser" into (click)="loginUser()"
+- change button bindings, from: `data-bind="click: loginUser"` into `(click)="loginUser()"`
 - also for guest field
-- change visible binding to: *ngIf="error"
-- change span into {{error}}
+- change `data-bind="visible: error"` binding to `*ngIf="error"`
+- change span binding into `{{error}}`
+
+explain why it does not work and how to fix it.
+
+### changes in the admin.module.ts:
+
+```typescript
+import { FormsModule } from '@angular/forms';
+```
+
+- add FormModule in the **imports** for module
 
 ### changes in the login.component.ts:
 
-- import { FormsModule } from '@angular/forms';
-- import UserService from the services
-- add loginUser method:
+- open **admin.module.ts** and copy the import for UserService
+- add import for **User** class model
+- add DI for UserService in the **constructor**
+- add instance fields for model and error 
+- add **loginUser** method
+- add **onSubmit** method to call the loginUser method, like this:
 
-this.userService.login(this.model).subscribe(result => {
-      this.router.navigate(['/cooking']);
-    }, error => {
-      this.error = error._body;
-    });
-    
-- add onSubmit method to call loginUser method
+```typescript
+  private model: User;
+  private error: string;
+
+  constructor(private service: UserService) { }
+
+  ngOnInit() {
+    this.service.login(this.model).subscribe(result => {
+    }, error => this.error = error._body);
+  }
+```
 
 ### changes in the app.module.ts:
 
