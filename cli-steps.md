@@ -72,7 +72,7 @@ in terminal:
 ```
 - show the app
 
-## Step 3: preparing the app structure and adding admin module and services (9 min)
+## Step 3: preparing the app structure and admin service (9 min)
 
 - open **app.component.ts** and remove all the lines in inline template except for router-outlet
 - show the app to demo automatic update in browser
@@ -231,34 +231,21 @@ import { FormsModule } from '@angular/forms';
 
 ## Step 5: add router and navigation to a new cooking module
 
-### changes in login.component.ts:
+### app-routing.module.ts:
+
+- RouterModule.forRoot(routes, { useHash: true })
+
+### login.component.ts:
 
 - import { Router } from '@angular/router';
 - add DI for router
 - in loginUser method: this.router.navigate(['/cooking/main']);
 
-in terminal:
+### create new model, service and component for live cooking and recipes:
  
  ```bash
 ng g module cooking --routing -m app
 ng g component cooking/main
-```
-
-### cooking-routing.module.ts:
-
-- add routing for cooking module: { path: 'cooking/main', component: MainComponent }
-- show app, click on login
-- explain children in navigation 
-
-- copy HTML from the source project: templates/main.html into main.component.html
-- explain navigation strategy 
-
-in app-routing.module.ts:
-- RouterModule.forRoot(routes, { useHash: true })
-
-### create new model, service and component for live cooking and recipes:
-
- ```bash
 ng g class cooking/shared/models/cooking
 ng g class cooking/shared/models/recipe
 ng g service cooking/shared/services/cooking -m cooking
@@ -267,25 +254,35 @@ ng g component cooking/live-cooking -m cooking
 ng g component cooking/recipes -m cooking
 ```
 
-in cooking-routing.module.ts:
-- copy imports from cooking.module.ts for two newly added components
-- add two child routes into children array: 
-{ path: 'live-cooking', component: LiveCookingComponent },
-  { path: 'recipes', component: RecipesComponent }
+### cooking-routing.module.ts:
+
+- add routing for cooking module: 
+
+```typescript
+{ path: 'cooking/main', component: MainComponent, children: [
+  { path: 'live-cooking', component: LiveCookingComponent },
+  { path: 'recipes', component: RecipesComponent } ]
+```
 
 ### in main.component.html:
 
-- remove templates on the bottom, and insert: <router-outlet> tag
+- copy HTML from the source project: **templates/main.html**
+- remove templates on the bottom, and insert: **<router-outlet>** tag
 - remove data-bind on the top
-- add router links instead of data-bind: routerLink="/cooking/live-cooking" routerLinkActive="active"
+- add router links instead of data-bind:
+
+```typescript
+routerLink="/cooking/live-cooking" routerLinkActive="active"
+```
+
 - also the second one, others remove
 
 ### copy the html to show some data:
 
-- from the cookings-list.html into live-cooking.component.html
-- from the recipes-list.html into recipes.component.html
-- from the cooking-card.html into live-cooking.component.html (instead of template)
-- from the recipe-card.html into recipes.component.html (instead of template)
+- from the cookings-list.html into **live-cooking.component.html**
+- from the recipes-list.html into **recipes.component.html**
+- from the cooking-card.html into **live-cooking.component.html** (instead of template)
+- from the recipe-card.html into **recipes.component.html** (instead of template)
 
 ### add some data inside:
 
