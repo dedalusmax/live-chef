@@ -47,23 +47,43 @@ NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network
 Explain what the intentions are, show the live chef and what we want to do.
 
 - open file explorer, go to the source folder and copy all from **Content/images** into **app/assets** folder
-- copy styles.scss from Content into app folder
-- open styles.scss and change the path to the image to: ./~/assets/backgroundImage.jpg
-- also, change -webkit-fill- to -webkit-stretch
-- open index.html and change the icon path to: assets/small-logo.png
-- show the app
-- add dependencies for bootstrap inside the package.json:
-```bash
+- copy **styles.scss** from **Content** into **app** folder
+- stop the LiveChefService
+- change the paths inside *Service/Repositories/RecipeRepository.cs* from **Content/images** to **assets** 
+- rebuild the project
+
+### changes in the styles.scss:
+
+- find the path to the image and change it to: ./~/assets/backgroundImage.jpg
+- change -webkit-fill- to -webkit-stretch
+
+### changes in the index.html:
+
+- change the icon path to: assets/small-logo.png
+
+show the app
+
+### changes in the package.json:
+
+- add dependencies for bootstrap:
+```json
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "3.2.1"
 ```
-- and add the links into the angular-cli.json:
-```bash
+
+### add the links into the angular-cli.json:
+
+```style
     "../node_modules/bootstrap/dist/css/bootstrap.min.css",
     "../node_modules/font-awesome/css/font-awesome.css",
 ```
-- execute ng serve
+in terminal:
+
+```style
+    (quit task)
+    ng serve
+```
 - show the app
 
 ## Step 3: preparing the app structure and adding admin module
@@ -91,7 +111,7 @@ ng g service shared/services/web-api -m app
 ```bash
 ng g service admin/shared/services/user -m admin
 ```
-### open user.service.ts
+### open user.service.ts:
 
 - add imports for User and WebApiService
 - add: private apiPath = 'http://localhost/LiveChefService/';
@@ -223,5 +243,3 @@ in cooking-routing.module.ts:
 
 the same thing in recipes.component.html!
 
-in the source project, in RecipeRepository.cs replace "Content/images" to "assets" 
-- rebuild the project
