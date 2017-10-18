@@ -109,7 +109,7 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class WebApiService extends Http {
@@ -157,12 +157,14 @@ export class WebApiService extends Http {
 - add instance field, DI in the constructor and body inside: 
 
 ```typescript
-private apiPath = 'http://localhost/LiveChefService/';
+  private apiPath = 'http://localhost/LiveChefService/';
 
+  constructor(private service: WebApiService) { }
+
+  login(user: User) {
+    return this.service.save(this.apiPath + '/login', user);
+  }
 ```
-- add DI in constructor: private service: WebApiService
-- add login method: loging(user: User) 
-- add body inside: return this.service.save<User>(this.apiPath + '/login', user);
 
 ## Step 4: adding template and styles for a login component to work
 
