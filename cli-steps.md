@@ -3,13 +3,7 @@
 This session is aiming to demonstrate the ease of development of Angular 4 application from scratch. Based on the LiveChefService project (an RTC app written in Knockout 3).
 
 ### Preparation 
-> open Visual Studio 2017 
-
-> open LiveChefService project
-
-> build it
-
-> start the app and minimize it
+> open Visual Studio 2017. open LiveChefService project. build it. start the app and minimize it.
 
 ## Step 1: getting the project ready
 
