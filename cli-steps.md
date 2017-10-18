@@ -18,8 +18,6 @@ ng new live-chef --minimal --routing --style scss --skip-git --skip-install -v
 cd live-chef
 npm install
 ```
-options: 
-https://github.com/angular/angular-cli/wiki/new
 
 NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (for new project) on a home wifi network.
 
@@ -28,11 +26,12 @@ NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (f
 ```bash
 ng serve
 ```
-NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network.
+- explain the effects of building the project
+- browse to the http://localhost:4200
 
 > switch to the presentation slides and explain about Angular CLI
 
-- *open folder* in VS code 
+- open folder in VS code 
 - explain the project structure and the configuration
 - open **angular-cli.json** and change: *defaults/component/inlineStyle* to true, and *inlineTemplate* to true
 
@@ -41,21 +40,20 @@ NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network
 Explain what the intentions are, show the live chef and what we want to do.
 
 - open file explorer, go to the source folder and copy all from **Content/images** into **app/assets** folder
-- copy **styles.scss** from **Content** into **app** folder
-- stop the LiveChefService
+- open **styles.scss** from **Content** and copy all into *styles.scss* inside the **app** folder
+- explain it is not a good idea and why
+- make changes in the **styles.scss**:
+--- find the path to the image and change it to: *./~/assets/backgroundImage.jpg*
+--- change -webkit-fill- to -webkit-stretch
+- make changes in the **index.html**: change the icon path to: *assets/small-logo.png*
+
+Additionally:
+- stop the LiveChefService project
 - change the paths inside *Service/Repositories/RecipeRepository.cs* from **Content/images** to **assets** 
 - rebuild the project
 
-### changes in the styles.scss:
-
-- find the path to the image and change it to: ./~/assets/backgroundImage.jpg
-- change -webkit-fill- to -webkit-stretch
-
-### changes in the index.html:
-
-- change the icon path to: assets/small-logo.png
-
-show the app
+- show the app
+- explain why it doesn't show anything usefull
 
 ### changes in the package.json:
 
