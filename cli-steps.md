@@ -2,6 +2,9 @@
 
 This session is aiming to demonstrate the ease of development of Angular 4 application from scratch. Based on the LiveChefService project (an RTC app written in Knockout 3).
 
+### Preparation 
+> open Visual Studio 2017 with the LiveChefService project and build it
+
 ## Step 1: getting the project ready
 
 - open Visual Studio Code
@@ -27,11 +30,17 @@ ng serve
 ```
 NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network.
 
-> switch to the presentation slides!
+> switch to the presentation slides and explain about Angular CLI
+
+- open folder in VS code 
+- explain the project structure and the configuration
+- open angular-cli.json and change: defaults/component/inlineStyle to true, and inlineTemplate to true
 
 ## Step 2: copying styles and assets from the source project
 
-- open file explorer, go to the source folder and copy all from Content/images into app/assets folder
+Explain what the intentions are, show the live chef and what we want to do.
+
+- open file explorer, go to the source folder and copy all from **Content/images** into **app/assets** folder
 - copy styles.scss from Content into app folder
 - open styles.scss and change the path to the image to: ./~/assets/backgroundImage.jpg
 - also, change -webkit-fill- to -webkit-stretch
@@ -53,7 +62,6 @@ NOTE: installation usually takes approx. 1 min and 20 sec on a home wifi network
 
 ## Step 3: preparing the app structure and adding admin module
 
-- open angular-cli.json and change: defaults/component/inlineStyle to true, and inlineTemplate to true
 - open app.component.ts and remove all the lines in inline template except for router-outlet
 - open another terminal window:
 ```bash
