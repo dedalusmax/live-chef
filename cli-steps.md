@@ -14,9 +14,7 @@ This session is aiming to demonstrate the ease of development of Angular 4 appli
 ```bash
 npm install -g @angular/cli
 d:
-ng new live-chef --minimal --routing --style scss --skip-git --skip-install -v
-cd live-chef
-npm install
+ng new live-chef1 --minimal --routing --style scss --skip-git -v
 ```
 
 NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (for new project) on a home wifi network.
@@ -24,6 +22,7 @@ NOTE: installation usually takes approx. 1 min (for CLI) and 1 min and 20 sec (f
 > switch to the presentation slides (with a keen eye to the installation process!)
 
 ```bash
+cd live-chef1
 ng serve
 ```
 - explain the effects of building the project
@@ -72,7 +71,7 @@ in terminal:
 ```
 - show the app
 
-## Step 3: preparing the app structure and adding admin module
+## Step 3: preparing the app structure and adding admin module and services
 
 - open **app.component.ts** and remove all the lines in inline template except for router-outlet
 - show the app to demo automatic update in browser
@@ -157,7 +156,7 @@ export class WebApiService extends Http {
 - add instance field, DI in the constructor and body inside: 
 
 ```typescript
-  private apiPath = 'http://localhost/LiveChefService/';
+  private apiPath = 'http://localhost/LiveChefService/api/user';
 
   constructor(private service: WebApiService) { }
 
@@ -165,6 +164,15 @@ export class WebApiService extends Http {
     return this.service.save(this.apiPath + '/login', user);
   }
 ```
+
+### changes in the app.module.ts:
+
+- add the following import for HTTP service to work: 
+```typescript
+  import { HttpModule, XHRBackend } from '@angular/http';
+```
+- add to the imports: HttpModule
+- add to the provider: XHRBackend
 
 ## Step 4: adding template and styles for a login component to work
 
@@ -206,16 +214,18 @@ import { FormsModule } from '@angular/forms';
   constructor(private service: UserService) { }
 
   ngOnInit() {
+    this.model = new User();
+  }
+
+  loginUser() {
     this.service.login(this.model).subscribe(result => {
     }, error => this.error = error._body);
   }
+
+  onSubmit() {
+    this.loginUser();
+  }
 ```
-
-### changes in the app.module.ts:
-
-- add: import { HttpModule, XHRBackend } from '@angular/http';
-- add imports: HttpModule
-- add provider: XHRBackend
 
 ## Step 5: add router and navigation to a new cooking module
 
