@@ -1,11 +1,12 @@
 # Angular 4 Crash Course (Angular CLI)
 
 This session is aiming to demonstrate the ease of development of Angular 4 application from scratch. Based on the LiveChefService project (an RTC app written in Knockout 3).
+Estimated time: 20 min.
 
 ### Preparation 
-> open Visual Studio 2017. open LiveChefService project. build it. start the app and minimize it.
+> open Visual Studio 2017. open LiveChefService project. build it. start the app. add new browser tab. open link to web-api.service.ts in github. minimize the browser. open presentation.
 
-## Step 1: getting the project ready
+## Step 1: getting the project ready (6 min)
 
 - open **Visual Studio Code**
 - open *integrated terminal*
@@ -34,7 +35,7 @@ ng serve
 - explain the project structure and the configuration
 - open **angular-cli.json** and change: *defaults/component/inlineStyle* to true, and *inlineTemplate* to true
 
-## Step 2: copying styles and assets from the source project
+## Step 2: copying styles and assets from the source project (3 min)
 
 Explain what the intentions are, show the live chef and what we want to do.
 
@@ -71,7 +72,7 @@ in terminal:
 ```
 - show the app
 
-## Step 3: preparing the app structure and adding admin module and services
+## Step 3: preparing the app structure and adding admin module and services (9 min)
 
 - open **app.component.ts** and remove all the lines in inline template except for router-outlet
 - show the app to demo automatic update in browser
@@ -174,7 +175,7 @@ export class WebApiService extends Http {
 - add to the imports: HttpModule
 - add to the provider: XHRBackend
 
-## Step 4: adding template and styles for a login component to work
+## Step 4: adding template and styles for a login component to work (6 min)
 
 - browse to the KO project and find *app/templates/login.html*
 - copy all the HTML into the **login.component.html**
@@ -219,6 +220,7 @@ import { FormsModule } from '@angular/forms';
 
   loginUser() {
     this.service.login(this.model).subscribe(result => {
+    
     }, error => this.error = error._body);
   }
 
