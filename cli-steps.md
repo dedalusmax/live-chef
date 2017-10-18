@@ -74,37 +74,51 @@ in terminal:
 
 ## Step 3: preparing the app structure and adding admin module
 
-- open app.component.ts and remove all the lines in inline template except for router-outlet
+- open **app.component.ts** and remove all the lines in inline template except for router-outlet
+- show the app to demo automatic update in browser
 - open another terminal window:
 ```bash
 ng g module admin --routing -m app
 ng g component admin/login
 ```
 
-- open app-routing.module.ts and add the route: { path: '', redirectTo: '/login', pathMatch: 'full' }
-- open admin.module.ts and copy the import for LoginComponent  
-- open admin-routing.module.ts, paste the import, and add the route: { path: 'login', component: LoginComponent }
+- open **app-routing.module.ts** and add the route: 
+```typescript
+{ path: '', redirectTo: '/login', pathMatch: 'full' }
+```
+- open **admin.module.ts** and copy the import for LoginComponent  
+- open **admin-routing.module.ts**, paste the import, and add the route: { path: 'login', component: LoginComponent }
 - show the app
 
 ```bash
 ng g class admin/shared/models/user
+ng g service admin/shared/services/user -m admin
 ng g service shared/services/web-api -m app
 ```
-- add username and password fields into User class
-- copy the code from this project into the file!
-- add references into app.module.ts
+- add *username* and *password* fields into the **user.ts** model
 
-```bash
-ng g service admin/shared/services/user -m admin
+### implement web-api.service.ts:
+
+```typescript
+
+
+
 ```
-### open user.service.ts:
+### implement user.service.ts:
 
+- open **app.module.ts** and copy the import to *WebApiService*
+- fix path with ../../../ in the beginning of this import
 - add imports for User and WebApiService
-- add: private apiPath = 'http://localhost/LiveChefService/';
+- add instance field, DI in the constructor and body inside: 
+
+```typescript
+private apiPath = 'http://localhost/LiveChefService/';
+
+```
 - add DI in constructor: private service: WebApiService
 - add login method: loging(user: User) 
 - add body inside: return this.service.save<User>(this.apiPath + '/login', user);
-  
+
 ## Step 4: adding template and styles for a login component to work
 
 - browse to the KO project and find app/templates/login.html
